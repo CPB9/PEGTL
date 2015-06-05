@@ -9,8 +9,6 @@
 
 namespace pegtl
 {
-   inline namespace ascii
-   {
       struct alnum : internal::ranges< internal::peek_char, 'a', 'z', 'A', 'Z', '0', '9' > {};
       struct alpha : internal::ranges< internal::peek_char, 'a', 'z', 'A', 'Z' > {};
       struct any : internal::any< internal::peek_char > {};
@@ -37,8 +35,6 @@ namespace pegtl
       template< char C > struct two : internal::string< C, C > {};
       struct upper : internal::range< internal::result_on_found::SUCCESS, internal::peek_char, 'A', 'Z' > {};
       struct xdigit : internal::ranges< internal::peek_char, '0', '9', 'a', 'f', 'A', 'F' > {};
-
-   } // ascii
 
 } // pegtl
 
